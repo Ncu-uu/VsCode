@@ -7,7 +7,12 @@ void addition(){
 	FILE *file;
 	printf("小朋友，欢迎来到加法训练！\n\n");
 	printf("你这次要挑战几道题呢？：");
-	scanf("%d",&num);
+	do{
+		scanf("%d",&num);
+		if(num <= 0){
+			printf("要输入大于0的数哦！:");
+		}
+	} while(num <= 0);
 	printf("要挑战多少以内的加法呢？:");
 
    	//判断输入的数据范围是否合法
@@ -45,12 +50,10 @@ void addition(){
 BOOL give_one_addition(int range){ 					//range为范围
 	int addend1,addend2,result,input;
 
-    addend1 = rand() % range + 1;			//生成（1~范围）的随机数作为第一个加数
-	do {
-		addend2 = rand() % range + 1;		//生成（1~范围）的随机数作为第二个加数
-        result = addend1 + addend2;
-	} while(result > range);
-	
+	addend1 = rand() % (range - 1) + 1;			//生成（1~范围-1）的随机数作为第一个加数
+	addend2 = rand() % (range - addend1) + 1;		//生成（1~（范围-第一个加数））的随机数作为第二个加数
+	result = addend1 + addend2;
+
     printf("%d+%d=", addend1, addend2);
 	scanf("%d",&input);
 	if(input == result){

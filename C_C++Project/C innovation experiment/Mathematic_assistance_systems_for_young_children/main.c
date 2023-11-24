@@ -18,8 +18,6 @@
 #include "Mathematic_assistance_systems_for_young_children.h"
 
 int main(){
-    addition();
-	division();
-    multiplication();
+    run();
     return 0;
 }

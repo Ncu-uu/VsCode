@@ -7,16 +7,21 @@ void multiplication(){
 	FILE *file;
 	printf("小朋友，欢迎来到乘法训练！\n\n");
 	printf("你这次要挑战几道题呢？：");
-	scanf("%d",&num);
+	do{
+		scanf("%d",&num);
+		if(num <= 0){
+			printf("要输入大于0的数哦！:");
+		}
+	} while(num <= 0);
 	printf("要挑战多少以内的乘法呢？:");
 
 	//判断输入的数据范围是否合法
 	do{
 		scanf("%d",&range);
-		if(range <= 2){
-			printf("要输入大于2的数哦！:");
+		if(range <= 1){
+			printf("要输入大于1的数哦！:");
 		}
-	} while(range <= 2);
+	} while(range <= 1);
 
 	printf("\n好的！本次乘法训练共%d题，数字都在%d以内！\n", num, range);
 	printf("\n准备好了吗，按下Enter键就计时开始咯！\n");
@@ -45,12 +50,11 @@ void multiplication(){
 BOOL give_one_multiplication(int range){ 					//range为范围
 	int factor1,factor2,result,input;
 
-	factor1 = rand() % range + 1;		//生成（1~范围）的随机数作为第一个因数
+	factor1 = rand() % range/2 + 1;			//生成（1~范围除以2）的随机数作为第一个因数
 	do {
-		factor2 = rand() % range + 1;		//生成（1~范围）的随机数作为第二个因数
-		result = factor1 * factor2;
-	} while(result > range);
-
+		result = rand() % range + 1;		//生成（1~范围）的随机数作为第二个因数
+	} while(result % factor1 != 0);			//确保能整除
+	factor2 = result / factor1;				//计算第二个因数
 	printf("%d×%d=", factor1, factor2);
 	scanf("%d",&input);
 	if(input == result){

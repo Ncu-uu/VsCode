@@ -7,7 +7,12 @@ void division(){
 	FILE *file;
 	printf("小朋友，欢迎来到除法训练！\n\n");
 	printf("你这次要挑战几道题呢？：");
-	scanf("%d",&num);
+	do{
+		scanf("%d",&num);
+		if(num <= 0){
+			printf("要输入大于0的数哦！:");
+		}
+	} while(num <= 0);
 	printf("要挑战多少以内的除法呢？:");
 
 	//判断输入的数据范围是否合法

@@ -1,4 +1,5 @@
 #include "Mathematic_assistance_systems_for_young_children.h"
+
 //将加法错题写入tmp文件
 void mistake_input_add(int a,int b,int c){
 	FILE *fp = NULL;

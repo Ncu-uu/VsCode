@@ -11,7 +11,7 @@
 #define FALSE 0
 
 //run
-void mainmenu();
+void run();
 void secondmenu();
 
 //fileop
