@@ -1,0 +1,360 @@
+class StudentManagementSystem {
+    private List<Student> students;
+
+    public StudentManagementSystem() {
+        this.students = new ArrayList<>();
+    }
+
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+
+        while (choice != 7) {
+            displayMenu();
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    addStudent();
+                    break;
+                case 2:
+                    browseStudents();
+                    break;
+                case 3:
+                    sortStudents();
+                    break;
+                case 4:
+                    searchStudents();
+                    break;
+                case 5:
+                    countStudents();
+                    break;
+                case 6:
+                    modifyStudent();
+                    break;
+                case 7:
+                    deleteStudent();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+        }
+    }
+
+    private void displayMenu() {
+        System.out.println("-------------- Student Information Management System --------------");
+        System.out.println("1. Add Student");
+        System.out.println("2. Browse Students");
+        System.out.println("3. Sort Students");
+        System.out.println("4. Search Students");
+        System.out.println("5. Count Students");
+        System.out.println("6. Modify Student");
+        System.out.println("7. Delete Student");
+        System.out.println("----------------------------------------------------------------");
+        System.out.print("Enter your choice: ");
+    }
+
+    private void addStudent() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter student information:");
+        System.out.print("ID: ");
+        String id = scanner.nextLine();
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Gender: ");
+        String gender = scanner.nextLine();
+        System.out.print("Birthdate: ");
+        String birthdate = scanner.nextLine();
+        System.out.print("Political Status: ");
+        String politicalStatus = scanner.nextLine();
+        System.out.print("Hometown: ");
+        String hometown = scanner.nextLine();
+        System.out.print("Address: ");
+        String address = scanner.nextLine();
+        System.out.print("Phone: ");
+        String phone = scanner.nextLine();
+        System.out.print("Email: ");
+        String email = scanner.nextLine();
+
+        Student student = new Student(id, name, age, gender, birthdate, politicalStatus, hometown, address, phone, email);
+        students.add(student);
+
+        System.out.println("Student added successfully.");
+    }
+
+    private void browseStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            System.out.println("Students:");
+            for (Student student : students) {
+                System.out.println("ID: " + student.getId());
+                System.out.println("Name: " + student.getName());
+                System.out.println("Age: " + student.getAge());
+                System.out.println("Gender: " + student.getGender());
+                System.out.println("Birthdate: " + student.getBirthdate());
+                System.out.println("Political Status: " + student.getPoliticalStatus());
+                System.out.println("Hometown: " + student.getHometown());
+                System.out.println("Address: " + student.getAddress());
+                System.out.println("Phone: " + student.getPhone());
+                System.out.println("Email: " + student.getEmail());
+                System.out.println("--------------------");
+            }
+        }
+    }
+
+    private void sortStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Sort students by:");
+            System.out.println("1. ID");
+            System.out.println("2. Name");
+            System.out.println("3. Gender");
+            System.out.println("4. Birthdate");
+            System.out.println("5. Hometown");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    Collections.sort(students, Comparator.comparing(Student::getId));
+                    break;
+                case 2:
+                    Collections.sort(students, Comparator.comparing(Student::getName));
+                    break;
+                case 3:
+                    Collections.sort(students, Comparator.comparing(Student::getGender));
+                    break;
+                case 4:
+                    Collections.sort(students, Comparator.comparing(Student::getBirthdate));
+                    break;
+                case 5:
+                    Collections.sort(students, Comparator.comparing(Student::getHometown));
+                    break;
+                default:
+                    System.out.println("Invalid choice. Sorting by ID by default.");
+                    Collections.sort(students, Comparator.comparing(Student::getId));
+                    break;
+            }
+
+            System.out.println("Students sorted successfully.");
+        }
+    }
+
+    private void searchStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Search students by:");
+            System.out.println("1. ID");
+            System.out.println("2. Name");
+            System.out.println("3. Gender");
+            System.out.println("4. Birthdate");
+            System.out.println("5. Hometown");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Enter search keyword: ");
+            String keyword = scanner.nextLine();
+
+            List<Student> searchResults = new ArrayList<>();
+
+            switch (choice) {
+                case 1:
+                    for (Student student : students) {
+                        if (student.getId().contains(keyword)) {
+                            searchResults.add(student);
+                        }
+                    }
+                    break;
+                case 2:
+                    for (Student student : students) {
+                        if (student.getName().contains(keyword)) {
+                            searchResults.add(student);
+                        }
+                    }
+                    break;
+                case 3:
+                    for (Student student : students) {
+                        if (student.getGender().contains(keyword)) {
+                            searchResults.add(student);
+                        }
+                    }
+                    break;
+                case 4:
+                    for (Student student : students) {
+                        if (student.getBirthdate().contains(keyword)) {
+                            searchResults.add(student);
+                        }
+                    }
+                    break;
+                case 5:
+                    for (Student student : students) {
+                        if (student.getHometown().contains(keyword)) {
+                            searchResults.add(student);
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid choice. No search results found.");
+                    break;
+            }
+
+            if (searchResults.isEmpty()) {
+                System.out.println("No search results found.");
+            } else {
+                System.out.println("Search Results:");
+                for (Student student : searchResults) {
+                    System.out.println("ID: " + student.getId());
+                    System.out.println("Name: " + student.getName());
+                    System.out.println("Age: " + student.getAge());
+                    System.out.println("Gender: " + student.getGender());
+                    System.out.println("Birthdate: " + student.getBirthdate());
+                    System.out.println("Political Status: " + student.getPoliticalStatus());
+                    System.out.println("Hometown: " + student.getHometown());
+                    System.out.println("Address: " + student.getAddress());
+                    System.out.println("Phone: " + student.getPhone());
+                    System.out.println("Email: " + student.getEmail());
+                    System.out.println("--------------------");
+                }
+            }
+        }
+    }
+
+    private void countStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Count students by:");
+            System.out.println()"
+            ```java
+            System.out.println("1. Gender");
+            System.out.println("2. Political Status");
+            System.out.println("3. Hometown");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    int maleCount = 0;
+                    int femaleCount = 0;
+                    for (Student student : students) {
+                        if (student.getGender().equalsIgnoreCase("Male")) {
+                            maleCount++;
+                        } else if (student.getGender().equalsIgnoreCase("Female")) {
+                            femaleCount++;
+                        }
+                    }
+                    System.out.println("Male Students: " + maleCount);
+                    System.out.println("Female Students: " + femaleCount);
+                    break;
+                case 2:
+                    int partyMemberCount = 0;
+                    int nonPartyMemberCount = 0;
+                    for (Student student : students) {
+                        if (student.getPoliticalStatus().equalsIgnoreCase("Party Member")) {
+                            partyMemberCount++;
+                        } else if (student.getPoliticalStatus().equalsIgnoreCase("Non-Party Member")) {
+                            nonPartyMemberCount++;
+                        }
+                    }
+                    System.out.println("Party Member Students: " + partyMemberCount);
+                    System.out.println("Non-Party Member Students: " + nonPartyMemberCount);
+                    break;
+                case 3:
+                    System.out.print("Enter hometown: ");
+                    String hometown = scanner.nextLine();
+                    int hometownCount = 0;
+                    for (Student student : students) {
+                        if (student.getHometown().equalsIgnoreCase(hometown)) {
+                            hometownCount++;
+                        }
+                    }
+                    System.out.println("Students from " + hometown + ": " + hometownCount);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+        }
+    }
+
+    private void modifyStudent() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter ID of the student to modify: ");
+            String id = scanner.nextLine();
+
+            for (Student student : students) {
+                if (student.getId().equals(id)) {
+                    System.out.println("Enter new student information:");
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Age: ");
+                    int age = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Gender: ");
+                    String gender = scanner.nextLine();
+                    System.out.print("Birthdate: ");
+                    String birthdate = scanner.nextLine();
+                    System.out.print("Political Status: ");
+                    String politicalStatus = scanner.nextLine();
+                    System.out.print("Hometown: ");
+                    String hometown = scanner.nextLine();
+                    System.out.print("Address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Phone: ");
+                    String phone = scanner.nextLine();
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+
+                    student = new Student(id, name, age, gender, birthdate, politicalStatus, hometown, address, phone, email);
+
+                    System.out.println("Student modified successfully.");
+                    return;
+                }
+            }
+
+            System.out.println("Student with ID " + id + " not found.");
+        }
+    }
+
+    private void deleteStudent() {
+        if (students.isEmpty()) {
+            System.out.println("No students found.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter ID of the student to delete: ");
+            String id = scanner.nextLine();
+
+            for (Student student : students) {
+                if (student.getId().equals(id)) {
+                    students.remove(student);
+
+                    System.out.println("Student deleted successfully.");
+                    return;
+                }
+            }
+
+            System.out.println("Student with ID " + id + " not found.");
+        }
+    }
+}
