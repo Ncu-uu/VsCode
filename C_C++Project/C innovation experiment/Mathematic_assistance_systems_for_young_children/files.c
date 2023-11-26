@@ -54,3 +54,21 @@ void mistake_read_and_copy(int number){
 	fclose(ftmp);
 	fclose(fmistakes);
 }
+//获取mistakes.txt的行数
+int get_num_of_mistakes(){
+	int count = 0;
+	FILE *fmistakes = NULL;
+	char ch;
+	fmistakes = fopen("mistakes.txt", "r");
+	if (fmistakes == NULL) {
+		printf("Failed to open mistakes.txt\n");
+		return -1;
+	}
+	while ((ch = fgetc(fmistakes)) != EOF) {
+		if (ch == '\n') {
+			count++;
+		}
+	}
+	fclose(fmistakes);
+	return count;
+}

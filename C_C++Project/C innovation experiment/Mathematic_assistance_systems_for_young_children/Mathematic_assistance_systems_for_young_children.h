@@ -15,8 +15,6 @@ void run();
 void basic_training();
 void advanced_training();
 
-
-
 //addition
 void addition();
 BOOL give_one_addition(int range);
@@ -33,17 +31,22 @@ BOOL give_one_multiplication(int range);
 void division();
 BOOL give_one_division(int range);
 
-//fileop
+//files
 void mistake_input_add(int a,int b,int c);
 void mistake_input_sub(int a,int b,int c);
 void mistake_input_mult(int a,int b,int c);
 void mistake_input_div(int a,int b,int c);
 void mistake_read_and_copy(int number);
+int get_num_of_mistakes();
 
 //time_limited
 void time_limited();
 
 //mixed
 void mixed();
+
+//mistakes
+void mistake();
+BOOL give_one_mistake(int num);
 
 #endif // !_MATHEMATIC_ASSISTANCE_SYSTEMS_FOR_YOUNG_CHILDREN_H_
