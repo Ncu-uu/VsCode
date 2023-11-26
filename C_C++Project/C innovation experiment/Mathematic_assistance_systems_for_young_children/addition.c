@@ -5,12 +5,12 @@ void addition(){
 	int num, range, i, num_true = 0;
 	time_t first, second;
 	FILE *file;
-	printf("小朋友，欢迎来到加法训练！\n\n");
+	printf("小朋友,欢迎来到加法训练!\n\n");
 	printf("你这次要挑战几道题呢？：");
 	do{
 		scanf("%d",&num);
 		if(num <= 0){
-			printf("要输入大于0的数哦！:");
+			printf("要输入大于0的数哦!:");
 		}
 	} while(num <= 0);
 	printf("要挑战多少以内的加法呢？:");
@@ -19,16 +19,15 @@ void addition(){
 	do{
 		scanf("%d",&range);
 		if(range <= 1){
-			printf("要输入大于1的数哦！:");
+			printf("要输入大于1的数哦!:");
 		}
 	} while(range <= 1);
 
-	printf("\n好的！本次加法训练共%d题，数字都在%d以内！\n", num, range);
-	printf("\n准备好了吗，按下Enter键就计时开始咯！\n");
+	printf("\n好的!本次加法训练共%d题,数字都在%d以内!\n", num, range);
+	printf("\n准备好了吗,按下Enter键就计时开始咯!\n");
 	getchar();
 	getchar();
 	
-	srand((unsigned)time(NULL));
 	time(&first);
 	for(i = 0;i < num;i++){
 		if(give_one_addition(range)){
@@ -36,19 +35,20 @@ void addition(){
 		}
 	}
 	time(&second);
-	printf("本次加法训练结束，共%d题，做对%d题，耗时%d秒，你真棒！\n", num, num_true, (unsigned)difftime(second,first));
+	printf("本次加法训练结束,共%d题,做对%d题,耗时%d秒,你真棒!\n", num, num_true, (unsigned)difftime(second,first));
 
 	if(num != num_true){
-		printf("\n你做错了下面几道题，已加入错题本中，要多多复习哟！\n");
+		printf("\n你做错了下面几道题,已加入错题本中,要多多复习哟!\n");
 		mistake_read_and_copy(num-num_true);
 		file = fopen("tmp.txt","w");				//清空tmp.txt
 		fclose(file);
 	}
 }
 
-//生成一个加法题目并判断对错
+//生成一个加法题目并判断对错,将错题写入tmp.txt
 BOOL give_one_addition(int range){ 					//range为范围
 	int addend1,addend2,result,input;
+	srand((unsigned)time(NULL));
 
 	addend1 = rand() % (range - 1) + 1;			//生成（1~范围-1）的随机数作为第一个加数
 	addend2 = rand() % (range - addend1) + 1;		//生成（1~（范围-第一个加数））的随机数作为第二个加数
@@ -57,10 +57,10 @@ BOOL give_one_addition(int range){ 					//range为范围
     printf("%d+%d=", addend1, addend2);
 	scanf("%d",&input);
 	if(input == result){
-		printf("回答正确！继续加油！\n\n");
+		printf("回答正确!继续加油!\n\n");
 		return TRUE;
 	}else{
-		printf("哎呀，不小心答错了，正确答案是%d，要细心哟！\n\n",result);
+		printf("哎呀,不小心答错了,正确答案是%d,要细心哟!\n\n",result);
 		mistake_input_add(addend1, addend2, result);
 		return FALSE;
 	}

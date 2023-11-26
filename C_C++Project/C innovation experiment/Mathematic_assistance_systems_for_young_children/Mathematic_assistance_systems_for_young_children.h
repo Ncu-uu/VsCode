@@ -14,13 +14,6 @@
 void run();
 void secondmenu();
 
-//fileop
-void mistake_input_add(int a,int b,int c);
-void mistake_input_sub(int a,int b,int c);
-void mistake_input_mult(int a,int b,int c);
-void mistake_input_div(int a,int b,int c);
-void mistake_read_and_copy(int number);
-
 //addition
 void addition();
 BOOL give_one_addition(int range);
@@ -36,6 +29,19 @@ BOOL give_one_multiplication(int range);
 //division
 void division();
 BOOL give_one_division(int range);
+
+//fileop
+void mistake_input_add(int a,int b,int c);
+void mistake_input_sub(int a,int b,int c);
+void mistake_input_mult(int a,int b,int c);
+void mistake_input_div(int a,int b,int c);
+void mistake_read_and_copy(int number);
+
+//time_limited
+void time_limited();
+
+//mixed
+void mixed();
 
 
 
