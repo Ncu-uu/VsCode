@@ -18,6 +18,6 @@
 #include "Mathematic_assistance_systems_for_young_children.h"
 
 int main(){
-    mixed();
+    run();
     return 0;
 }

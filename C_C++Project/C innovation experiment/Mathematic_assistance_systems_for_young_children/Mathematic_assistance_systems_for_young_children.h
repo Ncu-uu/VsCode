@@ -12,7 +12,10 @@
 
 //run
 void run();
-void secondmenu();
+void basic_training();
+void advanced_training();
+
+
 
 //addition
 void addition();
@@ -42,10 +45,5 @@ void time_limited();
 
 //mixed
 void mixed();
-
-
-
-
-
 
 #endif // !_MATHEMATIC_ASSISTANCE_SYSTEMS_FOR_YOUNG_CHILDREN_H_
