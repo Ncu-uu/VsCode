@@ -1,14 +1,19 @@
 #include "Mathematic_assistance_systems_for_young_children.h"
 
-void mistake() {
+void mistakes() {
 	int num, num_true = 0, i;
 	char str[255];
 	time_t first, second;
 	FILE *ftmp = NULL;
 
-	printf("输入本次错题训练的题量：");
+	printf("\n\n+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/\n");
+	printf("          小朋友，欢迎来到错题训练！       \n");
+	printf("+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/+-*/\n\n");
+	printf("输入本次错题训练的量：");
 	scanf("%d", &num);
-	printf("本次错题训练共%d题\n现在开始\n", num);
+	printf("\n准备好了吗,按下Enter键就计时开始咯!\n");
+	getchar();
+	getchar();
 
 	time(&first);
 	for (i = 0; i < num; i++) {
@@ -34,7 +39,7 @@ void mistake() {
 BOOL give_one_mistake(int num) {
 	int whichLine[255], currentIndex, input, result = 0;
 	int i = 0, j = 0, x;
-	char str[255], out[255], answer[255];
+	char str[255] = {'0'}, out[255] = {'0'}, answer[255] = {'0'};
 	BOOL flag;
 	FILE *fmistakes = NULL;
 	FILE *ftmp = NULL;

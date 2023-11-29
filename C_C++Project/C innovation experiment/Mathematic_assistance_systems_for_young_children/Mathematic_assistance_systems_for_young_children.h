@@ -46,7 +46,7 @@ void time_limited();
 void mixed();
 
 //mistakes
-void mistake();
+void mistakes();
 BOOL give_one_mistake(int num);
 
 #endif // !_MATHEMATIC_ASSISTANCE_SYSTEMS_FOR_YOUNG_CHILDREN_H_

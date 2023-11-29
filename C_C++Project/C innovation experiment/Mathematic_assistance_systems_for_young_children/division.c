@@ -46,16 +46,15 @@ void division(){
 }
 
 //生成一个除法题目并判断对错
-BOOL give_one_division(int range){ 					//range为范围
+BOOL give_one_division(int range){ 						//range为范围
 	int dividend,divisor,result,input;
 	srand((unsigned)time(NULL));
+	divisor = (rand() % (range / 2 - 1 )) + 2;			//生成（2~范围除以2）的随机数作为除数
+	do {	
+		result = (rand() % (range - 1 )) + 2;			//生成（2~范围）的随机数作为结果
+	} while(result * divisor > range);					//判断结果是否在范围内
 	
-	divisor = (rand() % (range / 2 - 1 )) + 2;		//生成（2~范围除以2）的随机数作为除数
-	do {
-		dividend = rand() % (range - 3) + 4;		//生成（4~范围）的随机数作为被除数
-	} while(dividend % divisor != 0 );
-	
-	result = dividend / divisor;
+	dividend = result * divisor;
 			
 	printf("%d÷%d=", dividend, divisor);
 	scanf("%d",&input);

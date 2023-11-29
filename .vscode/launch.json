@@ -11,7 +11,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -37,7 +37,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -63,7 +63,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -89,7 +89,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",

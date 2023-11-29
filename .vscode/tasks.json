@@ -3,7 +3,7 @@
         {
             "type": "cppbuild",
             "label": "GCC单文件",
-            "command": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gcc.exe",
+            "command": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -23,7 +23,7 @@
         {
             "type": "cppbuild",
             "label": "G++单文件",
-            "command": "C:\\Program Files\\mingw64\\bin\\g++.exe",
+            "command": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -46,7 +46,7 @@
         {
             "type": "cppbuild",
             "label": "GCC多文件",
-            "command": "C:\\Program Files\\mingw64\\bin\\gcc.exe",
+            "command": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -66,7 +66,7 @@
         {
             "type": "cppbuild",
             "label": "G++多文件",
-            "command": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe",
+            "command": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
