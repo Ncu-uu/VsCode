@@ -3,7 +3,7 @@
         {
             "name": "GCC",
             "includePath": [
-                "${workspaceFolder}/** "
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",
@@ -47,7 +47,7 @@
                 ],
                 "limitSymbolsToIncludedHeaders": true
             },
-            "compilerPathInCppPropertiesJson": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe"
+            "compilerPathInCppPropertiesJson": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe"
         },
         {
             "name": "MSVC143",
