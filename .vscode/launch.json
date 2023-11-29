@@ -9,7 +9,7 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
             "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [
