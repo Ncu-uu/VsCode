@@ -2,19 +2,19 @@
 ///*
 import java.io.*;
 
-// å‘˜å·¥ç±»
+// Ô±¹¤Àà
 public class Employee implements Serializable {
-    private String id;  // å‘˜å·¥ID
-    private String name;  // å‘˜å·¥å§“å
-    private String gender;  // å‘˜å·¥æ€§åˆ«
-    private String birthDate;  // å‘˜å·¥å‡ºç”Ÿæ—¥æœŸ
-    private String education;  // å‘˜å·¥å­¦å†
-    private String position;  // å‘˜å·¥èŒä½
-    private double salary;  // å‘˜å·¥è–ªèµ„
-    private String address;  // å‘˜å·¥åœ°å€
-    private String phoneNumber;  // å‘˜å·¥ç”µè¯å·ç 
+    private String id;  // Ô±¹¤ID
+    private String name;  // Ô±¹¤ĞÕÃû
+    private String gender;  // Ô±¹¤ĞÔ±ğ
+    private String birthDate;  // Ô±¹¤³öÉúÈÕÆÚ
+    private String education;  // Ô±¹¤Ñ§Àú
+    private String position;  // Ô±¹¤Ö°Î»
+    private double salary;  // Ô±¹¤Ğ½×Ê
+    private String address;  // Ô±¹¤µØÖ·
+    private String phoneNumber;  // Ô±¹¤µç»°ºÅÂë
 
-    // æ„é€ å‡½æ•°
+    // ¹¹Ôìº¯Êı
     public Employee(String id, String name, String gender, String birthDate, String education, String position, double salary, String address, String phoneNumber) {
         this.id = id;
         this.name = name;
@@ -27,107 +27,107 @@ public class Employee implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    // è·å–å‘˜å·¥ID
+    // »ñÈ¡Ô±¹¤ID
     public String getId() {
         return id;
     }
 
-    // è®¾ç½®å‘˜å·¥ID
+    // ÉèÖÃÔ±¹¤ID
     public void setId(String id) {
         this.id = id;
     }
 
-    // è·å–å‘˜å·¥å§“å
+    // »ñÈ¡Ô±¹¤ĞÕÃû
     public String getName() {
         return name;
     }
 
-    // è®¾ç½®å‘˜å·¥å§“å
+    // ÉèÖÃÔ±¹¤ĞÕÃû
     public void setName(String name) {
         this.name = name;
     }
 
-    // è·å–å‘˜å·¥æ€§åˆ«
+    // »ñÈ¡Ô±¹¤ĞÔ±ğ
     public String getGender() {
         return gender;
     }
 
-    // è®¾ç½®å‘˜å·¥æ€§åˆ«
+    // ÉèÖÃÔ±¹¤ĞÔ±ğ
     public void setGender(String gender) {
         this.gender = gender;
     }
 
-    // è·å–å‘˜å·¥å‡ºç”Ÿæ—¥æœŸ
+    // »ñÈ¡Ô±¹¤³öÉúÈÕÆÚ
     public String getBirthDate() {
         return birthDate;
     }
 
-    // è®¾ç½®å‘˜å·¥å‡ºç”Ÿæ—¥æœŸ
+    // ÉèÖÃÔ±¹¤³öÉúÈÕÆÚ
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    // è·å–å‘˜å·¥å­¦å†
+    // »ñÈ¡Ô±¹¤Ñ§Àú
     public String getEducation() {
         return education;
     }
 
-    // è®¾ç½®å‘˜å·¥å­¦å†
+    // ÉèÖÃÔ±¹¤Ñ§Àú
     public void setEducation(String education) {
         this.education = education;
     }
 
-    // è·å–å‘˜å·¥èŒä½
+    // »ñÈ¡Ô±¹¤Ö°Î»
     public String getPosition() {
         return position;
     }
 
-    // è®¾ç½®å‘˜å·¥èŒä½
+    // ÉèÖÃÔ±¹¤Ö°Î»
     public void setPosition(String position) {
         this.position = position;
     }
 
-    // è·å–å‘˜å·¥è–ªèµ„
+    // »ñÈ¡Ô±¹¤Ğ½×Ê
     public double getSalary() {
         return salary;
     }
 
-    // è®¾ç½®å‘˜å·¥è–ªèµ„
+    // ÉèÖÃÔ±¹¤Ğ½×Ê
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
-    // è·å–å‘˜å·¥åœ°å€
+    // »ñÈ¡Ô±¹¤µØÖ·
     public String getAddress() {
         return address;
     }
 
-    // è®¾ç½®å‘˜å·¥åœ°å€
+    // ÉèÖÃÔ±¹¤µØÖ·
     public void setAddress(String address) {
         this.address = address;
     }
 
-    // è·å–å‘˜å·¥ç”µè¯å·ç 
+    // »ñÈ¡Ô±¹¤µç»°ºÅÂë
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    // è®¾ç½®å‘˜å·¥ç”µè¯å·ç 
+    // ÉèÖÃÔ±¹¤µç»°ºÅÂë
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    // æ˜¾ç¤ºå‘˜å·¥ä¿¡æ¯
+    // ÏÔÊ¾Ô±¹¤ĞÅÏ¢
     public void displayInfo() {
-        System.out.println("èŒå·¥å·: " + id);
-        System.out.println("å§“å: " + name);
-        System.out.println("æ€§åˆ«: " + gender);
-        System.out.println("å‡ºç”Ÿå¹´æœˆ: " + birthDate);
-        System.out.println("å­¦å†: " + education);
-        System.out.println("èŒåŠ¡: " + position);
-        System.out.println("å·¥èµ„: " + salary);
-        System.out.println("ä½å€: " + address);
-        System.out.println("ç”µè¯: " + phoneNumber);
+        System.out.println("Ö°¹¤ºÅ: " + id);
+        System.out.println("ĞÕÃû: " + name);
+        System.out.println("ĞÔ±ğ: " + gender);
+        System.out.println("³öÉúÄêÔÂ: " + birthDate);
+        System.out.println("Ñ§Àú: " + education);
+        System.out.println("Ö°Îñ: " + position);
+        System.out.println("¹¤×Ê: " + salary);
+        System.out.println("×¡Ö·: " + address);
+        System.out.println("µç»°: " + phoneNumber);
     }
 }
 
@@ -136,17 +136,17 @@ public class Employee implements Serializable {
 /*
 
 import java.io.*;
-// å‘˜å·¥ç±»
+// Ô±¹¤Àà
 public class Employee implements Serializable{
-    private String id;  // å‘˜å·¥ID
-    private String name;  // å‘˜å·¥å§“å
-    private String gender;  // å‘˜å·¥æ€§åˆ«
-    private String birthDate;  // å‘˜å·¥å‡ºç”Ÿæ—¥æœŸ
-    private String education;  // å‘˜å·¥æ•™è‚²èƒŒæ™¯
-    private String position;  // å‘˜å·¥èŒä½
-    private double salary;  // å‘˜å·¥è–ªèµ„
-    private String address;  // å‘˜å·¥åœ°å€
-    private String phoneNumber;  // å‘˜å·¥ç”µè¯å·ç 
+    private String id;  // Ô±¹¤ID
+    private String name;  // Ô±¹¤ĞÕÃû
+    private String gender;  // Ô±¹¤ĞÔ±ğ
+    private String birthDate;  // Ô±¹¤³öÉúÈÕÆÚ
+    private String education;  // Ô±¹¤½ÌÓı±³¾°
+    private String position;  // Ô±¹¤Ö°Î»
+    private double salary;  // Ô±¹¤Ğ½×Ê
+    private String address;  // Ô±¹¤µØÖ·
+    private String phoneNumber;  // Ô±¹¤µç»°ºÅÂë
 
 
     public Employee(String id, String name, String gender, String birthDate, String education, String position, double salary, String address, String phoneNumber) {
@@ -233,17 +233,17 @@ public class Employee implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    // æ˜¾ç¤ºå‘˜å·¥ä¿¡æ¯
+    // ÏÔÊ¾Ô±¹¤ĞÅÏ¢
     public void displayInfo() {
-        System.out.println("èŒå·¥å·: " + id);
-        System.out.println("å§“å: " + name);
-        System.out.println("æ€§åˆ«: " + gender);
-        System.out.println("å‡ºç”Ÿå¹´æœˆ: " + birthDate);
-        System.out.println("å­¦å†: " + education);
-        System.out.println("èŒåŠ¡: " + position);
-        System.out.println("å·¥èµ„: " + salary);
-        System.out.println("ä½å€: " + address);
-        System.out.println("ç”µè¯: " + phoneNumber);
+        System.out.println("Ö°¹¤ºÅ: " + id);
+        System.out.println("ĞÕÃû: " + name);
+        System.out.println("ĞÔ±ğ: " + gender);
+        System.out.println("³öÉúÄêÔÂ: " + birthDate);
+        System.out.println("Ñ§Àú: " + education);
+        System.out.println("Ö°Îñ: " + position);
+        System.out.println("¹¤×Ê: " + salary);
+        System.out.println("×¡Ö·: " + address);
+        System.out.println("µç»°: " + phoneNumber);
     }
 }
  */

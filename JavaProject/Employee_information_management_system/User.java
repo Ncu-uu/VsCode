@@ -1,37 +1,37 @@
 public class User {
-    // ç”¨æˆ·å
+    // ÓÃ»§Ãû
     private String username;
-    // å¯†ç 
+    // ÃÜÂë
     private String password;
-    // ç”¨æˆ·ç±»å‹
+    // ÓÃ»§ÀàĞÍ
     private String type;
 
-    // è·å–ç”¨æˆ·å
+    // »ñÈ¡ÓÃ»§Ãû
     public String getUsername() {
         return username;
     }
 
-    // è®¾ç½®ç”¨æˆ·å
+    // ÉèÖÃÓÃ»§Ãû
     public void setUsername(String username) {
         this.username = username;
     }
 
-    // è·å–å¯†ç 
+    // »ñÈ¡ÃÜÂë
     public String getPassword() {
         return password;
     }
 
-    // è®¾ç½®å¯†ç 
+    // ÉèÖÃÃÜÂë
     public void setPassword(String password) {
         this.password = password;
     }
 
-    // è·å–ç”¨æˆ·ç±»å‹
+    // »ñÈ¡ÓÃ»§ÀàĞÍ
     public String getType() {
         return type;
     }
 
-    // è®¾ç½®ç”¨æˆ·ç±»å‹
+    // ÉèÖÃÓÃ»§ÀàĞÍ
     public void setType(String type) {
         this.type = type;
     }

@@ -4,31 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// å‘˜å·¥ç®¡ç†ç³»ç»Ÿç±»
+// Ô±¹¤¹ÜÀíÏµÍ³Àà
 public class EmployeeManagementSystem {
-    private List<Employee> employees =new ArrayList<>(); // å‘˜å·¥åˆ—è¡¨
+    private List<Employee> employees =new ArrayList<>(); // Ô±¹¤ÁĞ±í
     Scanner scanner = new Scanner(System.in);
 
-    // runæ–¹æ³•ï¼Œç”¨äºè¿è¡Œå‘˜å·¥ç®¡ç†ç³»ç»Ÿ
+    // run·½·¨£¬ÓÃÓÚÔËĞĞÔ±¹¤¹ÜÀíÏµÍ³
     public void run() {
-        // å¾ªç¯å¤„ç†ç”¨æˆ·çš„æ“ä½œé€‰æ‹©
+        // Ñ­»·´¦ÀíÓÃ»§µÄ²Ù×÷Ñ¡Ôñ
         boolean isRunning = true;
         while (isRunning) {
-            System.out.println("è¯·é€‰æ‹©æ“ä½œï¼š");
-            System.out.println(" 1 ï¼šå½•å…¥èŒå·¥ä¿¡æ¯");
-            System.out.println(" 2 ï¼šæ˜¾ç¤ºæ‰€æœ‰èŒå·¥ä¿¡æ¯");
-            System.out.println(" 3 ï¼šæŸ¥è¯¢èŒå·¥ä¿¡æ¯");
-            System.out.println(" 4 ï¼šåˆ é™¤èŒå·¥ä¿¡æ¯");
-            System.out.println(" 5 ï¼šä¿®æ”¹èŒå·¥ä¿¡æ¯");
-            System.out.println(" 6 ï¼šä¿å­˜æ•°æ®åˆ°æ–‡ä»¶");
-            System.out.println(" 7 ï¼šä»æ–‡ä»¶æ‰“å¼€æ•°æ®");
-            System.out.println(" 0 ï¼šé€€å‡ºç³»ç»Ÿ");
+            System.out.println("ÇëÑ¡Ôñ²Ù×÷£º");
+            System.out.println(" 1 £ºÂ¼ÈëÖ°¹¤ĞÅÏ¢");
+            System.out.println(" 2 £ºÏÔÊ¾ËùÓĞÖ°¹¤ĞÅÏ¢");
+            System.out.println(" 3 £º²éÑ¯Ö°¹¤ĞÅÏ¢");
+            System.out.println(" 4 £ºÉ¾³ıÖ°¹¤ĞÅÏ¢");
+            System.out.println(" 5 £ºĞŞ¸ÄÖ°¹¤ĞÅÏ¢");
+            System.out.println(" 6 £º±£´æÊı¾İµ½ÎÄ¼ş");
+            System.out.println(" 7 £º´ÓÎÄ¼ş´ò¿ªÊı¾İ");
+            System.out.println(" 0 £ºÍË³öÏµÍ³");
 
-            System.out.println("è¯·è¾“å…¥ä½ çš„æ“ä½œï¼š");
+            System.out.println("ÇëÊäÈëÄãµÄ²Ù×÷£º");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // æ¸…é™¤è¾“å…¥ç¼“å†²åŒºçš„æ¢è¡Œç¬¦
+            scanner.nextLine(); // Çå³ıÊäÈë»º³åÇøµÄ»»ĞĞ·û
 
-            // æ ¹æ®ç”¨æˆ·çš„é€‰æ‹©ï¼Œæ‰§è¡Œå¯¹åº”çš„æ“ä½œ
+            // ¸ù¾İÓÃ»§µÄÑ¡Ôñ£¬Ö´ĞĞ¶ÔÓ¦µÄ²Ù×÷
             switch (choice) {
                 case 0 -> isRunning = false;
                 case 1 -> addEmployee();
@@ -38,56 +38,56 @@ public class EmployeeManagementSystem {
                 case 5 -> updateEmployee();
                 case 6 -> saveToFile();
                 case 7 -> openFromFile();
-                default -> System.out.println("æ— æ•ˆçš„é€‰æ‹©ï¼");
+                default -> System.out.println("ÎŞĞ§µÄÑ¡Ôñ£¡");
             }
         }
     }
 
-    // å‘˜å·¥ç®¡ç†ç³»ç»Ÿæ„é€ å‡½æ•°
+    // Ô±¹¤¹ÜÀíÏµÍ³¹¹Ôìº¯Êı
     public EmployeeManagementSystem() {
 
     }
 
-    // æ·»åŠ å‘˜å·¥
+    // Ìí¼ÓÔ±¹¤
     public void addEmployee() {
-        System.out.println("å¼€å§‹å½•å…¥èŒå·¥ä¿¡æ¯");
-        System.out.println("è¯·è¾“å…¥èŒå·¥å·ï¼š");
+        System.out.println("¿ªÊ¼Â¼ÈëÖ°¹¤ĞÅÏ¢");
+        System.out.println("ÇëÊäÈëÖ°¹¤ºÅ£º");
         String id = scanner.nextLine();
 
         for (Employee employee : employees) {
             if (employee.getId().equals(id)) {
-                System.out.println("èŒå·¥å·å·²å­˜åœ¨ï¼");
+                System.out.println("Ö°¹¤ºÅÒÑ´æÔÚ£¡");
                 return;
             }
         }
 
-        System.out.println("è¯·è¾“å…¥å§“åï¼š");
+        System.out.println("ÇëÊäÈëĞÕÃû£º");
         String name = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥æ€§åˆ«ï¼š");
+        System.out.println("ÇëÊäÈëĞÔ±ğ£º");
         String gender = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥å‡ºç”Ÿå¹´æœˆï¼š");
+        System.out.println("ÇëÊäÈë³öÉúÄêÔÂ£º");
         String birthDate = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥å­¦å†ï¼š");
+        System.out.println("ÇëÊäÈëÑ§Àú£º");
         String education = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥èŒåŠ¡ï¼š");
+        System.out.println("ÇëÊäÈëÖ°Îñ£º");
         String position = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥å·¥èµ„ï¼š");
+        System.out.println("ÇëÊäÈë¹¤×Ê£º");
         double salary = scanner.nextDouble();
-        scanner.nextLine(); // æ¸…é™¤è¾“å…¥ç¼“å†²åŒºçš„æ¢è¡Œç¬¦
-        System.out.println("è¯·è¾“å…¥ä½å€ï¼š");
+        scanner.nextLine(); // Çå³ıÊäÈë»º³åÇøµÄ»»ĞĞ·û
+        System.out.println("ÇëÊäÈë×¡Ö·£º");
         String address = scanner.nextLine();
-        System.out.println("è¯·è¾“å…¥ç”µè¯ï¼š");
+        System.out.println("ÇëÊäÈëµç»°£º");
         String phoneNumber = scanner.nextLine();
 
         Employee employee = new Employee(id, name, gender, birthDate, education, position, salary, address, phoneNumber);
         employees.add(employee);
-        System.out.println("èŒå·¥ä¿¡æ¯å½•å…¥æˆåŠŸï¼");
+        System.out.println("Ö°¹¤ĞÅÏ¢Â¼Èë³É¹¦£¡");
         System.out.println();
     }
 
-    // æ˜¾ç¤ºæ‰€æœ‰å‘˜å·¥ä¿¡æ¯
+    // ÏÔÊ¾ËùÓĞÔ±¹¤ĞÅÏ¢
     public void displayAllEmployees() {
-        System.out.println("æ‰€æœ‰èŒå·¥ä¿¡æ¯å¦‚ä¸‹ï¼š");
+        System.out.println("ËùÓĞÖ°¹¤ĞÅÏ¢ÈçÏÂ£º");
         for (Employee employee : employees) {
             employee.displayInfo();
             System.out.println();
@@ -95,9 +95,9 @@ public class EmployeeManagementSystem {
         System.out.println();
     }
 
-    // æœç´¢å‘˜å·¥
+    // ËÑË÷Ô±¹¤
     public void searchEmployee() {
-        System.out.println("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„èŒå·¥å·ï¼š");
+        System.out.println("ÇëÊäÈëÒª²éÑ¯µÄÖ°¹¤ºÅ£º");
         String id = scanner.nextLine();
         for (Employee employee : employees) {
             if (employee.getId().equals(id)) {
@@ -106,162 +106,162 @@ public class EmployeeManagementSystem {
                 return;
             }
         }
-        System.out.println("æœªæ‰¾åˆ°è¯¥èŒå·¥");
+        System.out.println("Î´ÕÒµ½¸ÃÖ°¹¤");
         System.out.println();
     }
 
-    // åˆ é™¤å‘˜å·¥
+    // É¾³ıÔ±¹¤
     public void deleteEmployee () {
-            System.out.println("è¯·è¾“å…¥è¦åˆ é™¤çš„èŒå·¥å·ï¼š");
+            System.out.println("ÇëÊäÈëÒªÉ¾³ıµÄÖ°¹¤ºÅ£º");
             String id = scanner.nextLine();
 
             for (Employee employee : employees) {
                 if (employee.getId().equals(id)) {
                     employees.remove(employee);
-                    System.out.println("èŒå·¥åˆ é™¤æˆåŠŸ");
+                    System.out.println("Ö°¹¤É¾³ı³É¹¦");
                     System.out.println();
                     return;
                 }
             }
-            System.out.println("æœªæ‰¾åˆ°è¯¥èŒå·¥");
+            System.out.println("Î´ÕÒµ½¸ÃÖ°¹¤");
             System.out.println();
         }
 
-    // æ›´æ–°å‘˜å·¥ä¿¡æ¯
+    // ¸üĞÂÔ±¹¤ĞÅÏ¢
     public void updateEmployee (){
-            System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„èŒå·¥å·ï¼š");
+            System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÖ°¹¤ºÅ£º");
             String id = scanner.nextLine();
 
             for (Employee employee : employees){
                 if (employee.getId().equals(id)){
-                    System.out.println("è¯·é€‰æ‹©è¦ä¿®æ”¹çš„ä¿¡æ¯ï¼š");
-                    System.out.println("1.èŒå·¥å·");
-                    System.out.println("2.å§“å");
-                    System.out.println("3.æ€§åˆ«");
-                    System.out.println("4.å‡ºç”Ÿå¹´æœˆ");
-                    System.out.println("5.å­¦å†");
-                    System.out.println("6.èŒåŠ¡");
-                    System.out.println("7.å·¥èµ„");
-                    System.out.println("8ï¼Œä½å€");
-                    System.out.println("9.ç”µè¯");
+                    System.out.println("ÇëÑ¡ÔñÒªĞŞ¸ÄµÄĞÅÏ¢£º");
+                    System.out.println("1.Ö°¹¤ºÅ");
+                    System.out.println("2.ĞÕÃû");
+                    System.out.println("3.ĞÔ±ğ");
+                    System.out.println("4.³öÉúÄêÔÂ");
+                    System.out.println("5.Ñ§Àú");
+                    System.out.println("6.Ö°Îñ");
+                    System.out.println("7.¹¤×Ê");
+                    System.out.println("8£¬×¡Ö·");
+                    System.out.println("9.µç»°");
 
                     int choice= scanner.nextInt();
-                    scanner.nextLine(); // æ¸…é™¤è¾“å…¥ç¼“å†²åŒºçš„æ¢è¡Œç¬¦
+                    scanner.nextLine(); // Çå³ıÊäÈë»º³åÇøµÄ»»ĞĞ·û
 
                     switch (choice){
                         case 1 ->{
-                            System.out.println("è¯·è¾“å…¥èŒå·¥å·ï¼š");
+                            System.out.println("ÇëÊäÈëÖ°¹¤ºÅ£º");
                             String newId = scanner.nextLine();
                             employee.setId(newId);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 2 ->{
-                            System.out.println("è¯·è¾“å…¥å§“åï¼š");
+                            System.out.println("ÇëÊäÈëĞÕÃû£º");
                             String newName = scanner.nextLine();
                             employee.setName(newName);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 3 ->{
-                            System.out.println("è¯·è¾“å…¥æ€§åˆ«ï¼š");
+                            System.out.println("ÇëÊäÈëĞÔ±ğ£º");
                             String newGender = scanner.nextLine();
                             employee.setGender(newGender);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 4->{
-                            System.out.println("è¯·è¾“å…¥å‡ºç”Ÿå¹´æœˆï¼š");
+                            System.out.println("ÇëÊäÈë³öÉúÄêÔÂ£º");
                             String newBirthDate = scanner.nextLine();
                             employee.setBirthDate(newBirthDate);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 5->{
-                            System.out.println("è¯·è¾“å…¥å­¦å†ï¼š");
+                            System.out.println("ÇëÊäÈëÑ§Àú£º");
                             String newEducation = scanner.nextLine();
                             employee.setEducation(newEducation);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 6 ->{
-                            System.out.println("è¯·è¾“å…¥èŒåŠ¡ï¼š");
+                            System.out.println("ÇëÊäÈëÖ°Îñ£º");
                             String newPosition = scanner.nextLine();
                             employee.setPosition(newPosition);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                         case 7->{
-                            System.out.println("è¯·è¾“å…¥å·¥èµ„ï¼š");
+                            System.out.println("ÇëÊäÈë¹¤×Ê£º");
                             double newSalary = scanner.nextDouble();
-                            scanner.nextLine(); // æ¸…é™¤è¾“å…¥ç¼“å†²åŒºçš„æ¢è¡Œç¬¦
+                            scanner.nextLine(); // Çå³ıÊäÈë»º³åÇøµÄ»»ĞĞ·û
                             employee.setSalary(newSalary);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
 
                         case 8->{
-                            System.out.println("è¯·è¾“å…¥ä½å€ï¼š");
+                            System.out.println("ÇëÊäÈë×¡Ö·£º");
                             String newAddress = scanner.nextLine();
                             employee.setAddress(newAddress);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
 
                         case 9->{
-                            System.out.println("è¯·è¾“å…¥ç”µè¯ï¼š");
+                            System.out.println("ÇëÊäÈëµç»°£º");
                             String newPhoneNumber = scanner.nextLine();
                             employee.setPhoneNumber(newPhoneNumber);
-                            System.out.println("ä¿¡æ¯ä¿®æ”¹æˆåŠŸï¼");
+                            System.out.println("ĞÅÏ¢ĞŞ¸Ä³É¹¦£¡");
                             System.out.println();
                             return;
                         }
                     }
                 }
             }
-            System.out.println("æœªæ‰¾åˆ°è¯¥èŒå·¥");
+            System.out.println("Î´ÕÒµ½¸ÃÖ°¹¤");
     }
 
-    // å°†å‘˜å·¥ä¿¡æ¯ä¿å­˜åˆ°æ–‡ä»¶
+    // ½«Ô±¹¤ĞÅÏ¢±£´æµ½ÎÄ¼ş
     public void saveToFile (){
             try {
-                System.out.println("è¯·è¾“å…¥ä¿å­˜çš„æ–‡ä»¶åï¼š");
+                System.out.println("ÇëÊäÈë±£´æµÄÎÄ¼şÃû£º");
                 String  fileName = scanner.nextLine();
                 FileOutputStream fileOutputStream = new FileOutputStream(fileName);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(employees);
                 objectOutputStream.close();
                 fileOutputStream.close();
-                System.out.println("æ•°æ®ä¿å­˜æˆåŠŸï¼");
+                System.out.println("Êı¾İ±£´æ³É¹¦£¡");
                 System.out.println();
             } catch (IOException e) {
-                System.out.println("ä¿å­˜å¤±è´¥ï¼š" + e.getMessage());
+                System.out.println("±£´æÊ§°Ü£º" + e.getMessage());
                 System.out.println();
             }
         }
 
-    // ä»æ–‡ä»¶è¯»å–å‘˜å·¥ä¿¡æ¯
+    // ´ÓÎÄ¼ş¶ÁÈ¡Ô±¹¤ĞÅÏ¢
     public void openFromFile (){
             try {
-                System.out.println("è¯·è¾“å…¥æ‰“å¼€çš„æ–‡ä»¶åï¼š");
+                System.out.println("ÇëÊäÈë´ò¿ªµÄÎÄ¼şÃû£º");
                 String fileName = scanner.nextLine();
                 FileInputStream fileInputStream = new FileInputStream(fileName);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 employees = (List<Employee>) objectInputStream.readObject();
                 objectInputStream.close();
                 fileInputStream.close();
-                System.out.println("æ–‡ä»¶æ‰“å¼€æˆåŠŸï¼");
+                System.out.println("ÎÄ¼ş´ò¿ª³É¹¦£¡");
                 System.out.println();
             } catch (IOException | ClassNotFoundException e) {
-                System.out.println("æ‰“å¼€å¤±è´¥ï¼š" + e.getMessage());
+                System.out.println("´ò¿ªÊ§°Ü£º" + e.getMessage());
                 System.out.println();
             }
         }
