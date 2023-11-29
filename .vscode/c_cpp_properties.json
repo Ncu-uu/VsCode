@@ -3,7 +3,7 @@
         {
             "name": "GCC",
             "includePath": [
-                "c:/Users/Cen/VsCode/**"
+                "${workspaceFolder}/** "
             ],
             "defines": [
                 "_DEBUG",
@@ -15,7 +15,7 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
             "mergeConfigurations": false,
-            "compilerPath": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gcc.exe",
+            "compilerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gcc.exe",
             "browse": {
                 "path": [
                     "c:/Users/Cen/VsCode/**",
@@ -27,7 +27,7 @@
         {
             "name": "G++",
             "includePath": [
-                "c:/Users/Cen/VsCode/**"
+                "${workspaceFolder}/** "
             ],
             "defines": [
                 "_DEBUG",
@@ -35,18 +35,19 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.22621.0",
-            "cStandard": "c99",
+            "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
             "mergeConfigurations": false,
-            "compilerPath": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe",
+            "compilerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe",
             "browse": {
                 "path": [
                     "c:/Users/Cen/VsCode/**",
-                    "${workspaceFolder}"
+                    "c:/Users/cen/Desktop/VsCode"
                 ],
                 "limitSymbolsToIncludedHeaders": true
-            }
+            },
+            "compilerPathInCppPropertiesJson": "D:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\g++.exe"
         },
         {
             "name": "MSVC143",
