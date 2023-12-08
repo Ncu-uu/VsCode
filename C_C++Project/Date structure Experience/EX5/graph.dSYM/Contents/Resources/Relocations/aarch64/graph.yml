@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/cen/VsCode/VsCode/C_C++Project/Date structure Experience/EX5/graph'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _createGraph, symObjAddr: 0x0, symBinAddr: 0x100003608, symSize: 0x22C }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _createGraph, symObjAddr: 0x0, symBinAddr: 0x100003608, symSize: 0x22C }
+  - { offsetInCU: 0xFF, offset: 0xFF, size: 0x8, addend: 0x0, symName: _DFS, symObjAddr: 0x22C, symBinAddr: 0x100003834, symSize: 0x15C }
+  - { offsetInCU: 0x15C, offset: 0x15C, size: 0x8, addend: 0x0, symName: _DFSTraverse, symObjAddr: 0x388, symBinAddr: 0x100003990, symSize: 0x14C }
+  - { offsetInCU: 0x1AE, offset: 0x1AE, size: 0x8, addend: 0x0, symName: _BFS, symObjAddr: 0x4D4, symBinAddr: 0x100003ADC, symSize: 0x1D4 }
+  - { offsetInCU: 0x249, offset: 0x249, size: 0x8, addend: 0x0, symName: _BFSTraverse, symObjAddr: 0x6A8, symBinAddr: 0x100003CB0, symSize: 0x14C }
+  - { offsetInCU: 0x29B, offset: 0x29B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x7F4, symBinAddr: 0x100003DFC, symSize: 0x9C }
+...
