@@ -20,7 +20,7 @@ class EmployeeManagementSystem  // 员工管理系统构造函数
             println(" 6 ：保存数据到文件")
             println(" 7 ：从文件打开数据")
             println(" 0 ：退出系统")
-            println("请输入你的操作：")
+            print("请输入你的操作：")
             val choice = scanner.nextInt()
             scanner.nextLine() // 清除输入缓冲区的换行符
             when (choice) {

@@ -10,7 +10,7 @@
 #define INFEASIBLE -1
 #define OVERFLOW -2
 
-typedef int Status; 
+typedef int Status;
 typedef int ElemType;
 
 // 线性表的顺序存储结构最大长度
