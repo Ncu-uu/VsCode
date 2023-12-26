@@ -1,18 +1,35 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
-int find_z(int x, int y) {
-    while (y != 0) {
-        int temp = y;
-        y = x % y;
-        x = temp;
+int maxProfit(std::vector<int>& prices) {
+    int n = prices.size();
+    if (n <= 1) {
+        return 0;
     }
-    return x - 1;
+    
+    int maxProfit = 0;
+    int minPrice = prices[0];
+    
+    for (int i = 1; i < n; i++) {
+        maxProfit = std::max(maxProfit, prices[i] - minPrice);
+        minPrice = std::min(minPrice, prices[i]);
+    }
+    
+    return maxProfit;
 }
 
 int main() {
-    int x, y;
-    std::cin >> x >> y;
-    int z = find_z(x, y);
-    std::cout << z << std::endl;
+    int n;
+    std::cin >> n;
+    
+    std::vector<int> prices(n);
+    for (int i = 0; i < n; i++) {
+        std::cin >> prices[i];
+    }
+    
+    int result = maxProfit(prices);
+    std::cout << result << std::endl;
+    
     return 0;
 }

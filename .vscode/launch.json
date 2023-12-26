@@ -1,19 +1,6 @@
 {
     "configurations": [
-        {
-            "type": "java",
-            "name": "temp",
-            "request": "launch",
-            "mainClass": "temp",
-            "projectName": "VsCode_f94f323f"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "VsCode_f94f323f"
-        },
+        
         {
             "name": "GCC单文件",
             "type": "cppdbg",
@@ -23,7 +10,7 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "C:\\Enviroments\\MINGW64\\MinGW-W64-builds-5.0.0\\bin\\gdb.exe",
             "setupCommands": [

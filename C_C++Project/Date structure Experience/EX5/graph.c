@@ -5,51 +5,62 @@
 
 typedef struct {
     int vertex[MAX_VERTEX_NUM];
-    int arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
+    int arc[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
     int vertexNum;
     int arcNum;
 } Graph;
 
 void createGraph(Graph *G) {
-    printf("请输入顶点数和边数：");
-    scanf("%d %d", &G->vertexNum, &G->arcNum);
+    printf("请输入无向图顶点数:");
+    scanf("%d", &G->vertexNum);
+    printf("请输入边数:");
+    scanf("%d", &G->arcNum);
 
-    printf("请输入每个顶点的值：");
+    printf("请输入所有顶点的值:");
     for (int i = 0; i < G->vertexNum; i++) {
         scanf("%d", &G->vertex[i]);
     }
 
     for (int i = 0; i < G->vertexNum; i++) {
         for (int j = 0; j < G->vertexNum; j++) {
-            G->arcs[i][j] = 0;
+            G->arc[i][j] = 0;
         }
     }
 
-    printf("请输入每条边的信息：\n");
     for (int k = 0; k < G->arcNum; k++) {
-        int v1, v2;
-        printf("请输入第%d条边的两个顶点：", k + 1);
-        scanf("%d %d", &v1, &v2);
-        G->arcs[v1][v2] = 1;
-        G->arcs[v2][v1] = 1;
+        int start, end;
+        printf("请输入第 %d 边的两个顶点:", k+1);
+        scanf("%d %d", &start, &end);
+        G->arc[start-1][end-1] = 1;
+        G->arc[end-1][start-1] = 1;
+    }
+}
+
+void printMatrix(Graph G) {
+    printf("邻接矩阵如下:\n");
+    for (int i = 0; i < G.vertexNum; i++) {
+        for (int j = 0; j < G.vertexNum; j++) {
+            printf("%d ", G.arc[i][j]);
+        }
+        printf("\n");
     }
 }
 
 void DFS(Graph G, int v, int visited[]) {
-    printf("%d ", G.vertex[v]);
     visited[v] = 1;
+    printf("%d ", G.vertex[v]);
 
     for (int i = 0; i < G.vertexNum; i++) {
-        if (G.arcs[v][i] == 1 && visited[i] == 0) {
+        if (G.arc[v][i] == 1 && visited[i] == 0) {
             DFS(G, i, visited);
         }
     }
 }
 
-void DFSTraverse(Graph G) {
+void DFSTraversal(Graph G) {
     int visited[MAX_VERTEX_NUM] = {0};
 
-    printf("深度优先遍历结果：");
+    printf("DFS：");
     for (int i = 0; i < G.vertexNum; i++) {
         if (visited[i] == 0) {
             DFS(G, i, visited);
@@ -62,26 +73,26 @@ void BFS(Graph G, int v, int visited[]) {
     int queue[MAX_VERTEX_NUM];
     int front = 0, rear = 0;
 
-    printf("%d ", G.vertex[v]);
     visited[v] = 1;
+    printf("%d ", G.vertex[v]);
     queue[rear++] = v;
 
     while (front != rear) {
         int w = queue[front++];
         for (int i = 0; i < G.vertexNum; i++) {
-            if (G.arcs[w][i] == 1 && visited[i] == 0) {
-                printf("%d ", G.vertex[i]);
+            if (G.arc[w][i] == 1 && visited[i] == 0) {
                 visited[i] = 1;
+                printf("%d ", G.vertex[i]);
                 queue[rear++] = i;
             }
         }
     }
 }
 
-void BFSTraverse(Graph G) {
+void BFSTraversal(Graph G) {
     int visited[MAX_VERTEX_NUM] = {0};
 
-    printf("广度优先遍历结果：");
+    printf("BFS: ");
     for (int i = 0; i < G.vertexNum; i++) {
         if (visited[i] == 0) {
             BFS(G, i, visited);
@@ -93,7 +104,8 @@ void BFSTraverse(Graph G) {
 int main() {
     Graph G;
     createGraph(&G);
-    DFSTraverse(G);
-    BFSTraverse(G);
+    printMatrix(G);
+    DFSTraversal(G);
+    BFSTraversal(G);
     return 0;
 }
